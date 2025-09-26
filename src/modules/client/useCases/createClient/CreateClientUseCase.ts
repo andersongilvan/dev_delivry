@@ -1,5 +1,5 @@
 import z from "zod"
-import { IUserRequest } from "../../dtos/UserRequest"
+import { IUserRequest } from "../../dtos/IUserRequest"
 import { IUserRepository } from "../../repository/IUserRepository"
 import { UsernameAlreadyExistsException } from "../../exceptions/UserAlreadyExistsException"
 import { hash } from "bcryptjs";
