@@ -1,5 +1,6 @@
+import { IAuthenticateUser } from "@//modules/auth/authenticateClient/IAuthenticateUser"
 import { NextFunction, Request, Response } from "express"
-import { IAuthenticateUser } from "../../../modules/auth/authenticateUser/IAuthenticateUser"
+
 
 export class AuthenticateClientController {
 

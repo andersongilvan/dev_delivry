@@ -1,4 +1,4 @@
-import { AuthenticateClientController } from "../../../http/controllers/account/AuthenticateClientController";
+import { AuthenticateClientController } from "../../../http/controllers/auth/AuthenticateClientController";
 import { AuthenticateClientUseCase } from "../../../modules/auth/authenticateClient/AuthenticateClientUseCase";
 import { prisma } from "../../database/prisma";
 import { ClientRepository } from "../../database/prisma/ClientRepository"
