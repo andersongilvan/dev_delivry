@@ -15,8 +15,13 @@ export class DeliverymanRepository implements IDeliverymanRepository {
     }
     async findByUsername(username: string): Promise<Deliveryman | null> {
 
-        return await this.prisma.deliveryman.findUnique({
-            where: { username }
+        return await this.prisma.deliveryman.findFirst({
+            where: {
+                username: {
+                    equals: username,
+                    mode: "insensitive"
+                }
+            }
         })
 
     }

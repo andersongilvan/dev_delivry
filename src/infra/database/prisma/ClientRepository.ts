@@ -5,8 +5,13 @@ export class ClientRepository implements IUserRepository {
 
     constructor(private prisma: PrismaClient) { }
     async findByUsername(username: string): Promise<Client | null> {
-        return this.prisma.client.findUnique({
-            where: { username }
+        return this.prisma.client.findFirst({
+            where: {
+                username: {
+                    equals: username,
+                    mode: "insensitive"
+                }
+            }
         })
     }
 
