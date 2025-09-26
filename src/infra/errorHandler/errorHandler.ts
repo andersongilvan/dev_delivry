@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express"
-import { UsernameAlreadyExistsException } from "../../modules/users/exceptions/UserAlreadyExistsException"
+import { UsernameAlreadyExistsException } from "../../modules/client/exceptions/UserAlreadyExistsException"
 import { ZodError } from "zod"
 import { InvalidCredentialsException } from "../../modules/auth/exceptions/InvalidCredentialsException"
 

@@ -1,11 +1,11 @@
 import "dotenv/config"
 import { compare } from "bcryptjs"
-import { IUserRepository } from "../../users/repository/IUserRepository"
+import { IUserRepository } from "../../client/repository/IUserRepository"
 import { InvalidCredentialsException } from "../exceptions/InvalidCredentialsException"
 import { IAuthenticateUser } from "./IAuthenticateUser"
 import { sign } from "jsonwebtoken"
 
-export class AuthenticateUserUseCase implements IAuthenticateUser {
+export class AuthenticateClientUseCase implements IAuthenticateUser {
 
     constructor(private repository: IUserRepository) { }
 

@@ -1,6 +1,6 @@
 
 import { CreateUserController } from "../../../http/controllers/users/CreateUserController"
-import { CreateClientUseCase } from "../../../modules/users/useCases/createClient/CreateClientUseCase"
+import { CreateClientUseCase } from "../../../modules/client/useCases/createClient/CreateClientUseCase"
 import { prisma } from "../../database/prisma"
 import { ClientRepository } from "../../database/prisma/ClientRepository"
 

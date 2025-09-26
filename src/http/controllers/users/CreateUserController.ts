@@ -1,5 +1,6 @@
+import { ICreateUser } from "@//modules/client/useCases/createClient/ICreateClient"
 import { NextFunction, Request, Response } from "express"
-import { ICreateUser } from "../../../modules/users/useCases/createClient/ICreateClient"
+
 
 export class CreateUserController {
 

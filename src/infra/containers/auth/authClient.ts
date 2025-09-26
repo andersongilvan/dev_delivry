@@ -1,11 +1,11 @@
 import { AuthenticateClientController } from "../../../http/controllers/account/AuthenticateClientController";
-import { AuthenticateUserUseCase } from "../../../modules/auth/authenticateUser/AuthenticateUserUseCase";
+import { AuthenticateClientUseCase } from "../../../modules/auth/authenticateClient/AuthenticateClientUseCase";
 import { prisma } from "../../database/prisma";
-import { ClientRepository } from "../../database/prisma/ClientRepository";
+import { ClientRepository } from "../../database/prisma/ClientRepository"
 
 
 
-const authenticateUserUseCase = new AuthenticateUserUseCase(new ClientRepository(prisma))
-const authenticateUser = new AuthenticateClientController(authenticateUserUseCase)
+const authenticateClientUseCase = new AuthenticateClientUseCase(new ClientRepository(prisma))
+const authenticateUser = new AuthenticateClientController(authenticateClientUseCase)
 
 export { authenticateUser }
