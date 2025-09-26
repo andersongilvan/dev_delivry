@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres
+  
+    ports:
+      - '5432:5432'
+
+    container_name: db_restaurant
+
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: db_delivery
+
