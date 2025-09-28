@@ -5,6 +5,13 @@ import { Deliveries, PrismaClient } from "@prisma/client"
 export class Deliveryrepository implements IDeliveryRepository {
 
     constructor(private prisma: PrismaClient) { }
+    async findAll(): Promise<Deliveries[]> {
+
+        return await this.prisma.deliveries.findMany({
+            where: { end_at: null }
+        })
+
+    }
 
     async create(data: IDeliveryrequest): Promise<Deliveries> {
 

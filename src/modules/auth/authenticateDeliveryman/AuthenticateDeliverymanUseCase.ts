@@ -31,8 +31,12 @@ export class AuthenticateDeliverymanUsecase implements IAuthenticateDeliveryman 
         }
 
         // gerar o token
-        const token = sign({ usermane }, process.env.SECRET_KEY!, {
+        const token = sign({
+            username: usermane,
+            role: deliverymanExist.role
+        }, process.env.SECRET_KEY!, {
             subject: deliverymanExist.id,
+
             expiresIn: "1d"
         })
 

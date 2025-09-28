@@ -12,6 +12,7 @@ model Deliveryman {
   id         String       @id @default(uuid())
   username   String       @unique
   password   String
+  role String @default("DELIVERYMAN")
   Deliveries Deliveries[]
 
   @@map("deliveryman")
@@ -35,4 +36,6 @@ model Deliveries {
   id_deliverymen String?
   created_at     DateTime   @default(now())
   end_at         DateTime?
+
+  @@map("deliveries")
 }
