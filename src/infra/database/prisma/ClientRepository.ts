@@ -1,9 +1,16 @@
-import { Prisma, Client, PrismaClient } from "@prisma/client"
+import { Prisma, Client, PrismaClient, Deliveries } from "@prisma/client"
 import { IUserRepository } from "../../../modules/client/repository/IUserRepository"
 
 export class ClientRepository implements IUserRepository {
 
     constructor(private prisma: PrismaClient) { }
+
+   async findDeliveriesByClient(idClient: string): Promise<Deliveries[]> {
+       return this.prisma.deliveries.findMany({
+        where : { id_client : idClient }
+       })
+    }
+    
     async findByUsername(username: string): Promise<Client | null> {
         return this.prisma.client.findFirst({
             where: {

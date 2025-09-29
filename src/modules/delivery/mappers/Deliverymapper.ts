@@ -15,7 +15,8 @@ export class DeliveryMapper {
         return {
             id: data.id,
             idCliet: data.id_client,
-            itrmName: data.item_name,
+            idDeliveryman: data.id_deliverymen,
+            itemName: data.item_name,
             createdAt: data.created_at
         }
     }

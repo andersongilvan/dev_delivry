@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express"
 import { UsernameAlreadyExistsException } from "../../modules/client/exceptions/UserAlreadyExistsException"
 import { ZodError } from "zod"
 import { InvalidCredentialsException } from "../../modules/auth/exceptions/InvalidCredentialsException"
+import { ResourceNotFoundExceptions } from "../globalsExceptions/ResourseNotFoundException"
 
 
 export function errorHandler(error: Error, request: Request, response: Response, _: NextFunction) {
@@ -21,7 +22,11 @@ export function errorHandler(error: Error, request: Request, response: Response,
     }
 
     if (error instanceof InvalidCredentialsException) {
-        return response.status(error.statusCode).json({message: error.message})
+        return response.status(error.statusCode).json({ message: error.message })
+    }
+
+    if (error instanceof ResourceNotFoundExceptions) {
+        return response.status(error.statusCode).json({ message: error.message })
     }
 
     console.error("Erro ", error)

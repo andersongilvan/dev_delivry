@@ -8,10 +8,12 @@ interface IPayload {
 
 export async function authClient(request: Request, response: Response, next: NextFunction) {
 
+    
+
     const authHeader = request.headers.authorization
 
     if (!authHeader) {
-        return response.status(401).json({ message: "Token não enviado" })
+        return response.status(400).json({ message: "Token não enviado" })
     }
 
     // pegar o token

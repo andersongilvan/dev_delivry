@@ -3,6 +3,7 @@
 export interface IDeliveryReponse {
     id: string
     idCliet: string
-    itrmName : string
+    idDeliveryman : string | null
+    itemName : string
     createdAt: Date
 }
